@@ -7,6 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @Builder
 @Data
+
 public class Producto{
     @Id
     private String id;

@@ -29,7 +29,10 @@ public class ProductService {
         return product;
     }
 
-    public List<Product> getAllProducts(){
-        return productRepository.findAll();
+    public List<ProductResponse> getAllProducts(){
+        return productRepository.findAll()
+            .stream()
+            .map(product -> new ProductResponse(product.getId(), product.getNombre(), product.getDescripcion(), product.getPrecio()))
+            .toList();
     }
 }

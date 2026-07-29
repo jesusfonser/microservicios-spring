@@ -1,14 +1,22 @@
 package com.proyecto.microservicios.product.controller;
 
+import com.proyecto.microservicios.product.dto.ProductRequest;
+import com.proyecto.microservicios.product.service.ProductService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/product")
 public class ProductController{
 
+    private final ProductService productService;
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void createProduct(@RequestBody ProductRequest productRequest){
-         
+    public Product createProduct(@RequestBody ProductRequest productRequest){
+         return productService.createProduct(productRequest);
     }
 
 }

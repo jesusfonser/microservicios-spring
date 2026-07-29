@@ -13,7 +13,7 @@ import lombok.extern.slf4j.slf4j;
 public class ProductService {
     private final ProductRepository productRepository;
 
-    public void createProduct(ProductRequest productRequest) {
+    public Product createProduct(ProductRequest productRequest) {
         Product product = Product.builder()
                 .id(productRequest.id())
                 .nombre(productRequest.nombre())
@@ -25,5 +25,7 @@ public class ProductService {
         String avisoExito = "Producto %s creado con éxito".formatted(product.getNombre());
 
         log.info(avisoExito);
+
+        return product;
     }
 }

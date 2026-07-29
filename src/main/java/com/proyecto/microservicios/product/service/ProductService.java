@@ -4,8 +4,10 @@ import com.proyecto.microservicios.product.dto.ProductRequest;
 import com.proyecto.microservicios.product.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import com.proyecto.microservicios.product.model.Product;
-import lombok.extern.slf4j.slf4j;
+import com.proyecto.microservicios.product.model.Producto;
+import lombok.extern.slf4j.Slf4j;
+import com.proyecto.microservicios.product.dto.ProductResponse;
+import java.util.List;
 
 @Service
 @Slf4j
@@ -14,7 +16,7 @@ public class ProductService {
     private final ProductRepository productRepository;
 
     public ProductResponse createProduct(ProductRequest productRequest) {
-        Product product = Product.builder()
+        Producto product = Producto.builder()
                 .id(productRequest.id())
                 .nombre(productRequest.nombre())
                 .descripcion(productRequest.descripcion())

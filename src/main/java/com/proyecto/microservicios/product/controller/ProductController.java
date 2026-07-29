@@ -5,6 +5,8 @@ import com.proyecto.microservicios.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import com.proyecto.microservicios.product.dto.ProductResponse;
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
